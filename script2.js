@@ -13,9 +13,9 @@ async function generarHash(texto) {
 }
 
 // Ejemplo de uso:
-const usuario = 'as39183';
+const usuario = 'as32183';
 const contraseña = 'Contraseña12345';
-const llaveCifrado = 'Towi';
+const llaveCifrado = 'Towi3';
 
 let hashUsuario;
 let hashContraseña;
