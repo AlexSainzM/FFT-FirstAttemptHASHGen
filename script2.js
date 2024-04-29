@@ -13,9 +13,9 @@ async function generarHash(texto) {
 }
 
 // Ejemplo de uso:
-const usuario = 'Hola, mundo!';
-const contraseña = 'Hola, mundo!';
-const llaveCifrado = 'Hola, mundo!';
+const usuario = 'as39183';
+const contraseña = 'Contraseña12345';
+const llaveCifrado = 'Towi';
 
 let hashUsuario;
 let hashContraseña;
@@ -23,21 +23,24 @@ let hashLlaveCifrado;
 generarHash(usuario)
     .then(result => {
         hashUsuario = result;
-        document.getElementById('h1Prueba').innerText = hashUsuario; // Mostrar el hash en la etiqueta h1
+        document.getElementById('h1Prueba').innerText = hashUsuario.slice(0,5); // Mostrar el hash en la etiqueta h1
+        console.log(hashUsuario);
     })
     .catch(error => console.error('Error:', error));
 
 generarHash(contraseña)
     .then(result => {
         hashContraseña = result;
-        document.getElementById('h2Prueba').innerText = hashContraseña; // Mostrar el hash en la etiqueta h1
+        document.getElementById('h2Prueba').innerText = hashContraseña.slice(0,5); // Mostrar el hash en la etiqueta h2
+        console.log(hashContraseña);
     })
     .catch(error => console.error('Error:', error));
 
 generarHash(llaveCifrado)
     .then(result => {
         hashLlaveCifrado = result;
-        document.getElementById('h3Prueba').innerText = hashLlaveCifrado; // Mostrar el hash en la etiqueta h1
+        document.getElementById('h3Prueba').innerText = hashLlaveCifrado.slice(0,5); // Mostrar el hash en la etiqueta h3
+        console.log(hashLlaveCifrado);
     })
     .catch(error => console.error('Error:', error));
 
