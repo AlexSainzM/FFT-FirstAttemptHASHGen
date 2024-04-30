@@ -70,7 +70,7 @@ async function generarHash(texto) {
 }
 
 // Ejemplo de uso:
-const texto = 'as39483';
+const texto = 'as39473';
 generarHash(texto)
     .then(hash => console.log('Hash SHA-256:', hash))
     .catch(error => console.error('Error:', error));
