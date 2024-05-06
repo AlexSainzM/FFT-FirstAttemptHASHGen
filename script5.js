@@ -1,5 +1,8 @@
 let llaveGenerada = ''; // Variable global para almacenar la llave generada
 let llaveCorta = '';// Variable para generar la llave corta
+const containerContent = document.getElementById("containerP");
+
+
 
 
 
@@ -32,7 +35,27 @@ document.getElementById('Boton1').addEventListener('click', () => {
     const variable1 = document.getElementById('usuarioHTML').value;
     const variable2 = document.getElementById('contraseñaHTML').value;
     const variable3 = document.getElementById('llaveCifradoHTML').value;
+    containerContent.innerHTML = "";
+    
     generarHash(variable1, variable2, variable3)
-        .then(() => console.log('Llave generada:', llaveGenerada))
+        .then(() => {
+            let numeroAleatorio = Math.floor(Math.random() * 56);
+            console.log(numeroAleatorio);
+            llaveCorta = llaveGenerada.slice(numeroAleatorio, numeroAleatorio+8);
+            console.log(llaveCorta);
+            containerContent.innerHTML = `
+            <div class="logo">
+                <img src="LOGO FFT.gif" alt="Logo de la empresa">
+            </div>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <h1>Guarda en un lugar seguro tu llave de acceso:</h1>
+                    <h2>${llaveCorta}</h2>
+                </div>
+            </form>`;
+            console.log('Llave generada:', llaveGenerada)
+            console.log('Llave corta:', llaveCorta)
+        })
         .catch(error => console.error('Error:', error));
+
 });
